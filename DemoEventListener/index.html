@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event Listener</title>
+</head>
+
+<body>
+    <button id="miBoton">Mi Boton</button>
+
+    <div style="color: blue; margin: 20px;" id="pulsador1">Hace Click </div>
+    <div style="color: green; margin: 20px;" id="pulsador2">Hace Doble Click </div>
+
+    <script>
+        var boton = document.getElementById("miBoton");
+
+        var funcion1 = () => { console.log("Ejecute la Funcion Uno"); }
+
+        var funcion2 = () => { console.log("Ejecute la Funcion Dos"); }
+        //de esta manera no podemos registrar mas de una funcion al mismo evento ,
+        //como la estamos pisando  solo se ejecutara la ultima funcion registrada a dicho evento
+        /*boton.onclick = funcion1;
+        boton.onclick = funcion2; */
+
+        //con el addEventListener SI PODEMOS registrar mas de una function al mismo evento 
+        //en el mismo Elemento del DOM
+        boton.addEventListener("click", function (e) {
+            console.log("type:" + e.type);
+
+            console.log("type:" + e.timeStamp);
+            console.log("type:" + e.target.style.color);
+
+            console.log("Soy el Primer CallBack Registrado");
+        });
+
+        boton.addEventListener("mousemove", function (event) {
+            console.log(event);
+            console.log("Soy el Segundo CallBack Registrado");
+        });
+
+        var tiempoAnterior;
+
+        function ejemploJS1(evObject) {
+            alert("la funcion de gestion ah recibido el objeto event con tipo :" + evObject.type);
+            evObject.target.style.color = 'red';
+
+            if (tiempoAnterior) {
+                alert("Han transcurrido " + (evObject.timeStamp - tiempoAnterior) / 1000 + ' segundos desde el click anterior')
+            }
+
+            tiempoAnterior = evObject.timeStamp;
+
+        }
+
+        window.onload = function () {
+            document.getElementById('pulsador1').onclick = ejemploJS1;
+            document.getElementById('pulsador2').ondblclick = ejemploJS1;
+        }
+
+
+    </script>
+</body>
+
+</html>

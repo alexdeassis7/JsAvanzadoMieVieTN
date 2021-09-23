@@ -1,0 +1,9 @@
+#cuadro{
+    width: 400px;
+    height: 250px;
+    border: 1px black solid;
+    float: right;
+    text-align: center;
+    color: red;
+    font-family: Arial;
+}

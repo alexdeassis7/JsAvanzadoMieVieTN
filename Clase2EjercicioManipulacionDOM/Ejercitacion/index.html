@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Manipulacion DOM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Manipulando los nodos del DOM</h1>
+
+    <div id="cuadro">
+        <h4 id="primero">Jose</h4>
+        <h4 id="segundo">Marcelo</h4>
+        <h4 id="tercero">Martin</h4>
+    </div>
+
+    <p>Pulsar los siguientes botones, para disparar los eventos y modificar los textos de la caja de la derecha</p>
+    <button onclick="cambiar()">Mover a Marcelo en ultimo lugar</button>
+    <br><br>
+    <button onclick="debajo()">inserta o Mueve Mi Nombre Debajo De Todo</button>
+    <br><br>
+    <button onclick="reemplazar()">Reemplazar Jose Por mi Nombre</button>
+    <br><br>
+    <button onclick="suprimir3()">Suprimir a Martin</button>
+    <br><br>
+    <button onclick="restaurar2()">Restaurar al estado inicial</button>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
