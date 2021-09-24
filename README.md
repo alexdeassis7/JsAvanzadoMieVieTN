@@ -24,5 +24,5 @@ por ejemplo una card de aqui : https://getbootstrap.com/docs/4.0/components/card
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-##Tarea Clase 3
-## ver siguiente link luego de mirar los video del alumni relacionados con la propagacion de eventos https://es.javascript.info/bubbling-and-capturing
+###Tarea Clase 3
+##ver siguiente link luego de mirar los video del alumni relacionados con la propagacion de eventos https://es.javascript.info/bubbling-and-capturing
