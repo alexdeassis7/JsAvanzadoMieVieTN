@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" onclick="procesaEvento(1)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+    <style>
+        body *{
+            margin: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body onclick="procesaEvento(2)">
+    <!-- <div onclick="procesaEvento(3)">Presiona click Aqui por favor</div> -->
+<!-- event.stopProgration() : esta funcion detiene la propagacion del evento hacia arriba
+pero no en el elemento actual 
+
+event.stopInmediateProgration() :esta funcion detiene la propagacion del evento hacia arriba
+y tambien elemento actual  -->
+
+    <form onclick="alert('form')">FORM
+        <div onclick="alert('div')">DIV
+            <p onclick="alert('p')">P</p>
+        </div>
+    </form>
+
+</body>
+
+<script>
+    function procesaEvento(numero) {
+        console.log();
+        console.log(numero);
+    }
+</script>
+
+</html>

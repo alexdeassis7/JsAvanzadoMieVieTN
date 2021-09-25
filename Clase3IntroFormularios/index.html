@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Formulario</title>
+</head>
+
+<body>
+    <h3>Trabajo con elementos contenidos en un tag Form</h3>
+
+    <form id="form">
+        name : <input type="text" id="input" required minlength="5" maxlength="7">
+        <br>
+        edad : <input type="number" required min="10" max="20">
+        <br>
+        <button id="btn">Enviar Form</button>
+    </form>
+
+    <!-- que pasa si tengo componentes sueltos fuera del Form  -->
+    <h3>Trabajo con elementos Sueltos (NO contenido en un tag del tipo form )</h3>
+
+    Apellido:<input id="inputUno" type="text" required>
+    <br>
+    <button id="btn2">Enviar form</button>
+
+    
+</body>
+<script src="script.js"></script>
+
+</html>
