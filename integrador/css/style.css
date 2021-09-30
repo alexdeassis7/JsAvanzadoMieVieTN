@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Simpsons';
+    src: url('font/Simpsonfont.otf') format("opentype");
+  }
+
+body {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    background: url("images/fondo_body.jpg");
+    background-position-y: 120px;
+    background-size: cover;
+    font-family: 'Simpsons';
+    color: yellow;
+    box-sizing: border-box;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    height: 140px;
+    margin:0;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 99;
+}
+
+.header{
+    background: url("images/header.png") no-repeat center, url("images/fondo.png") repeat;
+    background-size: auto, 5%;
+    background-position-x: center, 10px;
+    background-position-y: top, 40px;
+    width: 100%;
+    height: 120px;
+    background-color: yellow;
+    top: 0;
+    left: 0;
+    margin:0;
+    padding: .4em 0;
+}
+
+#menu{
+    margin: -25px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.opcion{
+    top: 0;
+    margin: 0 100px;
+    display: inline-block;
+    z-index: 99;
+}
+
+ul>a {
+    text-decoration: none;
+    color: black;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+ul>a:hover {
+    box-shadow: 1px 1px 5px black;
+    background-color: yellowgreen;
+
+}
+
+main{
+    margin-top: 150px; 
+    width: 100%;
+}
+#cuadro{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly ;
+    right: 0;
+    width: auto;
+    height: 200px;
+    float: right;
+    color: black;
+}
+
+.imagenes{
+    margin:10px;
+    text-align: center;
+    width: 150px;
+    height: 200px;
+    text-shadow: 2px 2px 2px white;
+}
+
+.botones{
+    position:relative;
+    top:0;
+    display: block;
+    width: 5em;
+    height: 5em;
+    margin: 5px;
+    text-decoration: none;
+    display: block;
+    background-color:blueviolet;
+    border-radius: 50% 50%;
+    cursor: pointer;
+}
+
+
+
+a span{
+    font-size: 1.5em;
+    display: block;
+    position: relative;
+    width:17em ;
+    top: .9em;
+    left: 3.5em;
+    text-shadow: 1px 2px black;
+}
+
+a:hover span{
+    color: yellowgreen;
+}
+
+
+#marge{
+    background: url("images/marge.png") center no-repeat;
+    background-size: 80%;
+}
+
+#marge:hover{
+    background: url("images/marge_hover.png") center no-repeat;
+    background-size: 80%;
+}
+
+#bart{
+    background: url("images/patineta.png") center no-repeat;
+    background-size: 80%;
+}
+#bart:hover{
+    background: url("images/patineta_hover.png") center no-repeat;
+    background-size: 80%;
+}
+
+#bart_rata{
+    background: url("images/bart_rata.png") center no-repeat;
+    background-size: 80%;
+}
+#bart_rata:hover{
+    background: url("images/bart_rata_hover.png") center no-repeat;
+    background-size: 80%;
+}
+
+#homer_bart{
+    background: url("images/fondo.png") center no-repeat;
+    background-size: 90%;
+}
+
+#homer_bart:hover{
+    background: url("images/fondo_hover.png") center no-repeat;
+    background-size: 90%;
+}
+
+#lisa{
+    background: url("images/saxo.png") center no-repeat;
+    background-size: 70%;
+}
+
+#lisa:hover{
+    background: url("images/saxo_hover.png") center no-repeat;
+    background-size: 70%;
+}
+
+#yo{
+    background: url("images/yo.png") center no-repeat;
+    background-size: 90%;
+    background-position-x: 10px;
+}
+
+#yo:hover{
+    background: url("images/yo_hover.png") center no-repeat;
+    background-size: 90%;
+    background-position-x: 10px;
+}
+
+#img_homero{
+    background: url("images/homero.png") center no-repeat;
+    background-size: contain;
+}
+
+#img_marge{
+    background: url("images/marge_c.png") center no-repeat;
+    background-size: contain;
+}
+
+#img_bart{
+    background: url("images/bart.png") center no-repeat;
+    background-size: contain;
+}
+
+#img_lisa{
+    background: url("images/lisa.png") center no-repeat;
+    background-size:contain;
+}
+
+.fomulario{
+    width: 500px;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.formulario__titulo {
+    text-align: center;
+    margin-top: 0;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.formulario__input, .formulario__label, .formulario__submit {
+    display: block;
+    height: 20px;
+    width: 100%;
+    font-size: .9em;
+    font-family: 'Simpsons';
+}
+
+.formulario__input {
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    background: transparent;
+}
+
+.formulario__label {
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -65px;
+    z-index: -20;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+.formulario__submit {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    height: 40px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+    /* display: none; */
+}
+
+
+.formulario__input:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.formulario__input:focus+.formulario__label {
+   margin-top:  -100px;
+}
+
+.fijar{
+    margin-top: -100px;
+}

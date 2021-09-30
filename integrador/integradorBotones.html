@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Integrador - Los Simpsons</title>
+</head>
+
+<body>
+    <nav>
+        <h1 class="header"></h1>
+        <ul id="menu">
+            <a href="integradorBotones.html"><li class="opcion"> Botones</li></a>
+            <a href="integradorForm.html"><li class="opcion">Formulario</li></a>
+        </ul>
+    </nav>
+    
+    <main>
+        <div id="cuadro">
+            <h2 class="imagenes" id="img_homero">Homero</h2>
+            <h2 class="imagenes" id="img_marge">Marge</h2>
+            <h2 class="imagenes" id="img_lisa">Lisa</h2>
+        </div>
+        <a class="botones" id="marge" onclick="mover()" target="_blank"><span>Mover a Marge al Final</span></a>
+        <a class="botones" id="bart" onclick="agregar_bart()" target="_blank"><span>Insertar o Mover a Bart</span></a>
+        <a class="botones" id="bart_rata" onclick="mover_bart()" target="_blank"><span>Mover a Bart despues de Marge</span></a>
+        <a class="botones" id="homer_bart" onclick="reemplazar()" target="_blank"><span>Bart reemplaza a Homero</span></a>
+        <a class="botones" id="lisa" onclick="suprimir()" target="_blank"><span>Suprimir a Lisa</span></a>
+        <a class="botones" id="yo" onclick="reset()" target="_blank"><span>Resetear</span></a>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

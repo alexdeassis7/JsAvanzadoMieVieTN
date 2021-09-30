@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Integrador - Los Simpsons</title>
+</head>
+
+<body>
+    <nav>
+        <h1 class="header"></h1>
+        <ul id="menu">
+            <a href="integradorBotones.html"><li class="opcion"> Botones</li></a>
+            <a href="integradorForm.html"><li class="opcion">Formulario</li></a>
+        </ul>
+    </nav>
+    <main>
+        <form id="formulario" onsubmit="return validar()" class="fomulario">
+            <h2 class="formulario__titulo">CONTACTENOS</h2>
+    
+            <input id="nombre" type="text" class="formulario__input" required minlength="4" maxlength="50">
+            <label for="" class="formulario__label">Nombres</label>
+
+            <input id="apellido" type="text" class="formulario__input" required minlength="4" maxlength="50">
+            <label for="" class="formulario__label">Apellidos</label>
+    
+            <input id="mail" type="text" class="formulario__input">
+            <label for="" class="formulario__label">Correo</label>
+    
+            <input id="phone" type="text" class="formulario__input">
+            <label for="" class="formulario__label">Phone</label>
+    
+            <input id="mensaje" type="text" class="formulario__input">
+            <label for="" class="formulario__label">Mensaje</label>
+    
+            <input id="enviar" type="submit" class="formulario__submit">
+    
+        </form>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

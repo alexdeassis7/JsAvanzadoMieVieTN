@@ -1,0 +1,51 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+}
+
+.login {
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px 20px 20px 20px;
+    width: 90%;
+    max-width: 450px;
+    background: #ffffff;
+    position: relative;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.3);
+}
+
+.buttonLogin{
+    width: 100%;
+    max-width: 450px;
+    margin-top: 10px;
+    padding: 10px 10px;
+}
+
+.titleBar{
+    text-align: center;
+    border-bottom: 1px solid;
+    position: relative;
+    color:rgb(45, 45, 172);
+}
+
+.campos{
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.inputA{
+    margin-top: 5px;
+}
+
+.errorClass{
+    color: red;
+}
+
+
+/* #errorPassword{
+    color: red;
+} */
