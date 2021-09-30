@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Un Mundo Asincronico</title>
+</head>
+
+<body>
+    <h1>Asynchronous JavaScript and XML</h1>
+
+    <script>
+        var peticionHTTP;
+        //funcion que nos crea el objeto adecuado 
+        function inicializar_XHR() {
+            if (window.XMLHttpRequest) {
+                //navegador moderno
+                peticionHTTP = new XMLHttpRequest();
+            } else {
+                //navegador antiguo 
+                peticionHTTP = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+
+        //funcion que se encarga de realizar la peticion asincronica a una url por un Verbo en particular 
+        function realizarPeticion(url, metodo, functionA) {
+            peticionHTTP.onreadystatechange = functionA;
+            peticionHTTP.open( metodo,url, true);
+            peticionHTTP.send(null);
+        }
+
+        function descargarArchivo() {
+            //inicializar el objeto HTTP
+            inicializar_XHR();
+            //invocamos a la funcion encargada de realizar el reques asincronico 
+            realizarPeticion('miArchivo.txt', 'GET' ,funcActuadora );
+
+        }
+
+        function funcActuadora() {
+         //  alert("Hola Mundo asincronico");
+
+            console.log("Estado de la peticion : " + peticionHTTP.readyState);
+            //lo valores definidos para la propiedad readyState son :
+            /*
+            0 = NO inicializados(objeto creado pero no se invoco al metodo open())
+            1 = Cargando (objeto creado , pero no se invoco al metodo send()) 
+            2 = Cargado (se ah invocado al metodo send pero el server aun no ha respondido )
+            3= Interactivo (se ah recibido algunos datos , aunque no se puede emplear la propiedad "responseText")
+            4= Completo (se ah recibido todos los datos de la respuesta del server)
+            */
+
+            if(peticionHTTP.readyState == 4){//aca chequeo si termino la peticion
+                if(peticionHTTP.status == 200){//aca chequeo si la peticion me dio success
+                        document.write(peticionHTTP.responseText);
+                }else{
+                    document.write("la peticion asincronica salio mal Amego!");
+                }
+            }
+        }
+//cuando se carga toda la pagina se dispara el evento onload y ejecuta la funcion descargarArchivo
+     window.onload = descargarArchivo
+    </script>
+
+</body>
+
+</html>
