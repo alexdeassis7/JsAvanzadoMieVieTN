@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Validacion User</title>
+
+    <script>
+        var peticiontHttp;
+
+        function inicializar_XHR() {
+            if (window.XMLHttpRequest) {
+                peticiontHttp = new XMLHttpRequest();
+            } else {
+                peticiontHttp = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+        }
+
+        function realizarPeticion(url, metodo, funcionA) {
+            peticiontHttp.onreadystatechange = funcionA;
+            peticiontHttp.open(metodo, url, true);
+            peticiontHttp.send(null);
+        }
+
+        function inicializarProcesoAsync() {
+            var usuario = document.getElementById('user').value;
+            console.log("Chequeamos si existe el usuario : " + usuario);
+            inicializar_XHR();
+            realizarPeticion('http://localhost:8090/ValidaFormDB/ValidaUser?user=' + usuario, 'GET', funcionActuadora)
+        }
+
+        function funcionActuadora() {
+
+            if (document.getElementById('user').value.length > 0) {
+                if (peticiontHttp.readyState == 4) {
+                    if (peticiontHttp.status == 200) {
+
+                        if (peticiontHttp.responseText == 'true') {
+                            document.getElementById("message").innerText = "El nombre de Usuario ya existe , intente con otro nombre";
+                        } else {
+                            document.getElementById("message").innerText = "El nombre de Usuario esta disponible";
+                        }
+                    }
+
+                }
+            } else {
+                document.getElementById("message").innerText = "";
+            }
+        }
+
+            //window.onload = inicializarProcesoAsync;
+    </script>
+
+</head>
+
+<body>
+    <form>
+        <p>Nombre de Usuario</p>
+        <input type="text" id="user" placeholder="Ingrese el nombre de usuario" onkeyup="inicializarProcesoAsync()">
+        <p id="message"></p>
+    </form>
+</body>
+
+</html>
