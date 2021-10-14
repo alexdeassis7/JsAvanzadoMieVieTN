@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var peticiontHTTP;
+
+        function inicializar_XHR() {
+            if (window.XMLHttpRequest) {
+                peticiontHTTP = new XMLHttpRequest();
+            } else {
+                peticiontHTTP = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+
+        function realizarPeticionPOST(url, metodo, funcionA) {
+            peticiontHTTP.onreadystatechange = funcionA;
+
+            peticiontHTTP.open(metodo, url, true);
+            peticiontHTTP.setRequestHeader("Content-type", "application/json");
+
+            var jsonData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: "32123-5555",
+                model: "Gluspension",
+                serialNumber: "12312312332",
+                purchasePrice: 1340,
+                purchaseDate: "01-20-2110",
+                contact: true
+            };
+            //formateamos el dato a un json para enviarlos al api REST
+            var jsonFormated = JSON.stringify(jsonData);
+            console.log('JSON.stringify : ');
+            console.dir(jsonFormated);
+
+            //volvemos a parsear el dato (roll back )
+            console.log('json parse() : ');
+
+            console.dir(JSON.parse(jsonFormated));
+
+            peticiontHTTP.send(jsonFormated);
+        }
+
+        function lanzarRequestAsincronico() {
+            inicializar_XHR();
+            realizarPeticionPOST('http://localhost:9090/api/v1/bikes', 'POST', funcActuadoraPOST)
+        }
+
+
+        function funcActuadoraPOST() {
+            if (peticiontHTTP.readyState == 4) {
+                if (peticiontHTTP.status == 200) {
+                    document.getElementById('respuestaServer').innerHTML = "El objeto json fue persistido en la base Sqlite mediante a API REST "
+                } else {
+                    document.getElementById('respuestaServer').innerHTML = "ERROR : El objeto json noooo fue persistido en la base Sqlite  "
+                }
+            }
+
+        }
+    </script>
+
+    <form>
+        name: <input type="text" id="name"> email: <input type="text" id="email"> name: <input type="text" id="name"> name: <input type="text" id="name"> name: <input type="text" id="name">
+
+        <button type="button" onclick="lanzarRequestAsincronico()">Enviar POST</button>
+    </form>
+
+    <p id="respuestaServer"></p>
+
+</body>
+
+</html>
